@@ -37,3 +37,11 @@ Input url:
   var testval = url.split('&testval=')[1].split(';,');
   script = decodeURIComponent(script);
   ```
+  
+  - get the output:
+  
+  > localStorage
+  
+  ```js
+  localStorage.getItem(location.href.split('token=')[1].split('&')[0])
+  ```
