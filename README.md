@@ -16,8 +16,10 @@ Input url:
   
   - if success:
   
-  `http://${ site }/${ file }.html?success=t&token=${ token ( string ) }&script=${ user code ( string ) }`
+  `http://${ site }/${ file }.html?success=t&token=${ token ( string ) }&script=${ user code ( string ) };`
 
   - if error
   
   `http://${ site }/${ file }.html?error=${ erro message ( string ) }&script=${ user code ( string ) };`
+  
+  `http://example.com/?error=ReferenceError:%20a%20is%20not%20defined&script=console.log(a);`
