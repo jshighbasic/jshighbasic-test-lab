@@ -25,3 +25,14 @@ Input url:
   `http://${ site }/${ file }.html?error=${ erro message ( string ) }&script=${ user code ( string ) }`
   
   `http://example.com/?error=ReferenceError:%20a%20is%20not%20defined&script=console.log(a);`
+
+ 
+  JavaScript to get user's script:
+  
+  ```js
+  var url = location.href;
+  var backTo = url.split('?dt=')[1].split('&script=')[0];
+  var script = url.split('&script=')[1].split('&testval=')[0];
+  var testval = url.split('&testval=')[1].split(';,');
+  script = decodeURIComponent(script);
+  ```
