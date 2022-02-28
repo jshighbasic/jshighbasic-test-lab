@@ -27,8 +27,9 @@ Input url:
   `http://example.com/?error=ReferenceError:%20a%20is%20not%20defined&script=console.log(a);`
 
  
-  Use javaScript to get user's script:
+  Get the return:
   
+   - Get user's script: 
   ```js
   var url = location.href;
   var backTo = url.split('?dt=')[1].split('&script=')[0];
