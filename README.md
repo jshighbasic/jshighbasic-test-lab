@@ -27,7 +27,7 @@ Input url:
   `http://example.com/?error=ReferenceError:%20a%20is%20not%20defined&script=console.log(a);`
 
  
-  JavaScript to get user's script:
+  Use javaScript to get user's script:
   
   ```js
   var url = location.href;
