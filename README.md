@@ -8,12 +8,16 @@ Test the user's javascript code on their own computer.
   
 Input url:
   
-  `http://${site}/${file}.html?dt=${ after runing the script file, direct to this url ( url ) }&script=${ user code ( string ) }&testval=${ testing value [ var Variables { JavaScript } ] ( array ) };`
+  `http://${ site }/${ file }.html?dt=${ after runing the script file, direct to this url ( url ) }&script=${ user code ( string ) }&testval=${ testing value [ var Variables { JavaScript } ] ( array ) };`
 
  `http://example.com/test.html?dt=http://example.com/back.html&script=console.log(list);&testval=list=5;,list=4;,list=3;,list=2;,list=1;,list=0;`
 
   Return url:
   
-  -if success:
+  - if success:
   
-  `http://${site}/${file}.html?success=t&token=${ token ( string ) }&script=${ user code ( string ) }`
+  `http://${ site }/${ file }.html?success=t&token=${ token ( string ) }&script=${ user code ( string ) }`
+
+  - if error
+  
+  `http://${ site }/${ file }.html?error=${ erro message ( string ) }&script=${ user code ( string ) };`
