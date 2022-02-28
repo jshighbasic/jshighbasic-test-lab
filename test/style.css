@@ -1,0 +1,137 @@
+body{
+    margin: 0 10vw;
+}
+
+@font-face {
+    font-family: 'Consolas';
+    src: url(../../font/consola.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap');
+
+.CodeMirror, code {
+    font-family: Consolas, 'Courier New', monospace !important;
+}
+.prettyprint{
+    background-color: #070625 !important;
+}
+
+#error{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px !important;
+    background: #efefef;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.material-icons-round {
+    user-select: none;
+    font-size: 48px !important;
+    border-radius: 50%;
+    margin: 10px;
+    padding: 5px;
+}
+
+#submit{
+    user-select: none;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.done{
+    color: black;
+    background: lightgreen;
+}
+
+c{
+    color: black;
+    background: #efefef;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 20px;
+}
+
+.question{
+    width: 80vw;
+    margin: 20px auto;
+    margin-bottom: 100px;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+p{
+    font-size: 30px;
+    margin: 20px;
+    font-weight: 100;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: 300;
+}
+
+h{
+    font-size: 40px;
+    font-weight: 300;
+    margin-left: 50px;
+    color: rgb(255, 0, 0);
+    transition: .3s;
+    background: transparent;
+}
+
+h:hover{
+    color: rgb(0, 0, 0);
+    background: #efefef;
+}
+
+i{
+    font-size: 20px;
+}
+
+hr{
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 40px;
+}
+
+.tipsOn{
+    border: none;
+    background: lightgreen;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 70px;
+}
+
+.tip{
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+button{
+    cursor: pointer;
+}
+
+#footer{
+    user-select: none;
+    margin-bottom: 50px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+a{
+    text-decoration: none;
+}
