@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript High Basic</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="dracula.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.35.0/codemirror.css'>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="nav">
 
+    </div>
+    <div class="question">
+        <h1>Sorting system</h1>
+        <p>
+            Sort an array of numbers from largest to smallest.
+            <br>
+            variable: list, is an array
+        </p>
+        <c>var list = [];</c>
+        <hr>
+        <p>
+            For example:
+        </p>
+        <c>var list = [1,2,3,4,5,6,7,8,9,10];</c>
+        <p>
+            The output should be:
+        </p>
+        <c>[10,9,8,7,6,5,4,3,2,1]</c>
+        <p><i>Use console.log() to output the result.</i></p>
+        <hr>
+        <p>Tips</p>
+        <div class="tip">
+            <p>
+                <i>
+                    The sort function can be used to sort a list in ascending order. However, the question asks to sort the list in descending order. Try think how to do that.
+                </i>
+            </p>
+            <button onclick="open_tips(this)" class="tipsOn"><span class="material-icons-round" style="font-size: 24px !important;">visibility_off</span></button>
+            <div class="tip" id="t1" style="display:none;">
+                <p>
+                    <i>
+                        The code is here:
+                        <br>
+                        <d>DO NOT ONLY COPY BUT ALSO UNDERSTAND THE CODE.</d>
+                    </i>
+                    <br>
+                    <pre class="prettyprint"><code class="language-js">
+    list.sort(function(a,b){return b-a});
+    console.log(list);
+    <code></pre>
+                </p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="answer">
+        <textarea id="editor">/*Use JavaScript to answer the question here*/
+</textarea>
+        <center><button id="submit">Submit</button></center>
+        <div id="error"><span class="material-icons-round done">done</span></div>
+    </div>
+    <center id="footer"><tr><br><br>
+        <a style="color:rgb(0, 0, 0);">&copy;XchuangC, 2022. All Rights Reserved.</a>
+        <hr><img src="https://starwes.github.io/assets/XC.svg" height="60px" style="background:white; padding:20px;"><br><text>Part of Xchuangc(Xcfo) family.</text>
+        <br>
+    </tr></center>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.35.0/codemirror.js'></script>
+    <script src='https://codemirror.net/mode/javascript/javascript.js'></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+            mode: "javascript",
+            lineNumbers: true,
+            theme: "dracula"
+        });
+        </script>
+        <script>
+            const testing_values=[
+                `var list=[40,50,15,90,70,80,60,10,20,30];`,
+                `var list=[50,20,500,100,900,55,555,6454,112,22,33];`,
+                `var list=[1,2,3,4,5,6,7,8,9,10];`,
+                `var list=[50,40,952,812,64,2132,8469,5423,12,22,33];`,
+            ];
+            const result = `[[90,80,70,60,50,40,30,20,15,10],[6454,900,555,500,112,100,55,50,33,22,20],[10,9,8,7,6,5,4,3,2,1],[8469,5423,2132,952,812,64,50,40,33,22,12]]`;
+            dt='../../testScript.html'
+            $('#submit').click(function(){
+                if(location.href.includes('?')){
+                    var url = location.href.split('?')[0];
+                }
+                else{
+                    var url = location.href;
+                }
+                location.href = `${dt}?dt=${url}&script=${editor.getValue().replaceAll('\n','%0A')}&testval=${testing_values}`;
+            });
+        </script>
+        <script>
+            try{
+                location.href.includes('&script=') ? editor.setValue(decodeURIComponent(location.href.split('&script=')[1])) : '';
+                location.href.includes('?error=') ? $('#error').html(`<span class="material-icons-round warn">warning</span>&nbsp;${decodeURIComponent(location.href.split('?error=')[1].split('&script=')[0])}`) : '';
+                if(location.href.includes('?success=t') && localStorage.getItem(location.href.split('token=')[1].split('&')[0])==result){
+                    $('#error').html(`<span class="material-icons-round done">done</span>Test passed!<br>Output:<br>${localStorage.getItem(location.href.split('token=')[1].split('&')[0])}`);
+                }
+                else if(localStorage.getItem(location.href.split('token=')[1].split('&')[0]) != result){
+                    $('#error').html(`<span class="material-icons-round warn">warning</span>Wrong answer: <br>Output:<br>${localStorage.getItem(location.href.split('token=')[1].split('&')[0])}`);
+                }
+            }
+            catch(e){
+                console.log(e);
+            }
+        </script>
+        <script>
+            var open_tip = false;
+            function open_tips(e){
+                if(open_tip == false){
+                    $('#t1').css('display','block');
+                    open_tip = true;
+                    e.innerHTML=`<span class="material-icons-round" style="font-size: 24px !important;">visibility</span>`;
+                }
+                else{
+                    $('#t1').css('display','none');
+                    open_tip = false;
+                    e.innerHTML=`<span class="material-icons-round" style="font-size: 24px !important;">visibility_off</span>`;
+                }
+            }
+        </script>
+        <script>
+            window.onload = function() {
+                var offset = sessionStorage.getItem("offsetTop");
+                window.scrollTo(0, offset);
+                window.onscroll = function(){
+                    sessionStorage.setItem("offsetTop", document.documentElement.scrollTop);
+                };
+            };
+        </script>
+</body>
+</html>
