@@ -1,4 +1,4 @@
-# jshighbasic-testlab
+# JavaScript High Basic Test Lab
 Test the user's javascript code on their own computer.
 
 - Create an html file.
