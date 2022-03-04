@@ -3,7 +3,7 @@ Test the user's javascript code on their own computer.
 
 - Create an html file.
 - Download javascript files.
-- Put `<script src="https://jshighbasic.github.io/testlab/main.js"></script>` at the bottom of <body>.
+- Put `<script src="https://jshighbasic.github.io/testlab/main.js"></script>` at the bottom of `<body>`.
 - The page should be blank and don't put any other script files in it.
   > Other elements may affect the loading speed of the test page, and other scripts may affect the normal work of testlabjs.
   
